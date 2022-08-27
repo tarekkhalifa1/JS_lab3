@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(22, 20, 20);
+}
+
+div {
+    margin: 50px auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    background-color: bisque;
+    padding: 25px;
+    color: brown;
+    font-size: 1.5rem;
+}
+
+a,
+button {
+    display: inline-block;
+    text-decoration: none;
+    color: brown;
+    padding: 5px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+a:hover,
+button:hover {
+    background-color: rgb(22, 20, 20);
+    color: bisque;
+}

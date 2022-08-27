@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Function</title>
+</head>
+
+<body>
+
+    <script>
+        function parent() {
+            let a = 100;
+
+            function child() {
+                console.log(a);
+                console.log(`From child ${b}`); // not defined because b out of child scope and paren and global
+
+                function grand() {
+                    let b = 500;
+                    console.log(`From grand ${a}`); // will run because a in child function scope
+                    console.log(`From grand ${b}`); // will run because b in local scope function
+                }
+                grand();
+            }
+            child();
+        }
+
+        parent();
+
+        // parent ==> ✓ local ✓ global  ==>   X child X grand
+        // child ==> ✓ local ✓ parent ✓ global  ==>  X grand
+        // grand ==> ✓ local ✓ child ✓ parent  ✓ global  ==>  X grand
+    </script>
+
+</body>
+
+</html>
